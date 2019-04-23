@@ -8,7 +8,7 @@ public class MouseController : MonoBehaviour
     public Color startColor;
     public Color mouseOverColor;
     bool isMouseOver = false;
-    public int clickForce = 250;
+    private int clickForce = 125;
     private Rigidbody rb;
     public Renderer rend;
 
@@ -19,15 +19,7 @@ public class MouseController : MonoBehaviour
         //Set the initial color (0f,0f,0f,0f)
         startColor = rend.material.color;
     }
-
-    private void FixedUpdate()
-    {
-        if (rb.velocity.magnitude < .01)
-        {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
-    }
+    
 
     private void OnMouseEnter()
     {
@@ -56,7 +48,9 @@ public class MouseController : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 if(hit.transform.tag != "Plane")
-                    hit.rigidbody.AddForce(-hit.normal * clickForce, ForceMode.Impulse);
+                    //hit.rigidbody.AddForce(-hit.normal * clickForce);
+                    rb.AddForce(-hit.normal * clickForce, ForceMode.Impulse);
+                //hit.rigidbody.AddForceAtPosition(-hit.normal * clickForce);
 
             }
 
