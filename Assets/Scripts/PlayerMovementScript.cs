@@ -25,7 +25,7 @@ public class PlayerMovementScript : MonoBehaviour
 
 
     public AudioSource _jumpSound;
-    public AudioSource _freakingZombiesSound;
+    //public AudioSource _freakingZombiesSound;
     public AudioSource _hitSound;
     public AudioSource _walkSound;
     public AudioSource _runSound;

@@ -450,10 +450,7 @@ public class GunScript : MonoBehaviour
             yield return new WaitForSeconds(reloadChangeBulletsTime - 0.5f);
             if (meeleAttack == false && pmS.maxSpeed != runningSpeed)
             {
-                if (player.GetComponent<PlayerMovementScript>()._freakingZombiesSound)
-                    player.GetComponent<PlayerMovementScript>()._freakingZombiesSound.Play();
-                else
-                    print("Missing Freaking Zombies Sound");
+                
 
                 if (bulletsIHave - amountOfBulletsPerLoad >= 0)
                 {
