@@ -8,6 +8,9 @@ TagManager:
   - BulletSpawn
   - Condor
   - Plane
+  - Dummie
+  - LevelPart
+  - SetVolume
   layers:
   - Default
   - TransparentFX
